@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narina Shivay Mandal</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body {
+    margin: 0;
+    padding: 15px;
+    background: #8a7d7f;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+} */
+
+.poster {
+    width: 100%;
+    max-width: 1536px;
+    margin: auto;
+    aspect-ratio: 1536 / 1024;
+    position: relative;
+    overflow: hidden;
+    background-image: url("backgroung.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* UPPER TWO PHOTOS */
+
+.top-photo {
+    position: absolute;
+    top: 19%;
+    width: 22%;
+    height: 34%;
+    border-radius: 50%;
+    padding: 2px;
+    border: 5px solid #e6a52c;
+    background: #fff3d5;
+    box-shadow: 0 0 0 3px #7a2500;
+    overflow: hidden;
+}
+
+.top-left {
+    left: 4%;
+}
+
+.top-right {
+    right: 4.5%;
+}
+
+.top-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* TOP PHOTO NAMES */
+
+.top-name {
+    position: absolute;
+    top: 50%;
+    width: 19%;
+    height: 5%;
+    background: #fff0c4;
+    border: 3px solid #d38a18;
+    border-radius: 20px;
+    text-align: center;
+    color: #6b1600;
+    font-weight: bold;
+    font-size: clamp(9px, 1.2vw, 20px);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.name-left {
+    left: 6%;
+}
+
+.name-right {
+    right: 6%;
+}
+
+/* BOTTOM 20 PHOTOS */
+
+.members {
+    position: absolute;
+    left: 9%;
+    top: 63%;
+    width: 85%;
+    height: 30%; 
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    column-gap: 10px;
+    row-gap: 4%;
+}
+
+.member {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #310008, #800020, #1a0005);
+}
+
+#image_fix {
+    background: linear-gradient(135deg, #310008, #800020, #1a0005);
+    width: 95%;
+    height: 345px;
+    left: 30px;
+    top: 470px;
+    border-radius: 2%;
+}
+
+.member img {
+    width: 100%;
+    height: 78%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid #d99524;
+    border-radius: 13px;
+    background: #eee;
+    padding: 2px;
+    display: block;
+}
+
+.member-name {
+    width: 94%;
+    height: 19%;
+    margin-top: 2px;
+    background: #fff0c8;
+    border: 2px solid #d99524;
+    border-radius: 8px;
+    text-align: center;
+    color: #651900;
+    font-weight: bold;
+    font-size: clamp(6px, 0.7vw, 12px);
+    padding: 2px 1px;
+    overflow: hidden;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    body {
+        padding: 3px;
+    }
+
+    .poster {
+        width: 100%;
+    }
+
+    .top-photo {
+        border-width: 2px;
+        padding: 2px;
+    }
+
+    .member img {
+        border-width: 1px;
+        border-radius: 4px;
+        padding: 0;
+    }
+
+    .member-name {
+        border-width: 1px;
+        border-radius: 3px;
+        padding: 0;
+    }
+
+    .top-name {
+        border-width: 1px;
+        padding: 2px 0;
+    }
+}
+
+/* PRINT SETTINGS (केवल पोस्टर प्रिंट करने के लिए) */
+
+@media print {
+     @page {
+        margin: 0;
+        size: landscape; /* पोस्टर लैंडस्केप अनुपात (1536/1024) में सही फिट बैठेगा */
+    } 
+
+    html{
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* बॉडी के बाकी सभी तत्वों को छुपाएं, सिर्फ पोस्टर दिखाएं */
+    /* body * {
+        visibility: hidden;
+    } */
+
+    .poster, .poster * {
+        visibility: visible;
+    }
+
+    .poster {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw !important;
+        max-width: none !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="poster">
+
+    <!-- UPPER LEFT PHOTO -->
+    <div class="top-photo top-left">
+        <img src="" alt="Member 1">
+    </div>
+    <div class="top-name name-left">
+        आपका नाम
+    </div>
+
+    <!-- UPPER RIGHT PHOTO -->
+    <div class="top-photo top-right">
+        <img src="" alt="Member 2">
+    </div>
+    <div class="top-name name-right">
+        आपका नाम
+    </div>
+
+    <!-- BOTTOM 20 MEMBERS -->
+    <div class="members" id="image_fix">
+
+        <div class="member">
+            <img src="satish_saw.png" alt="Member 1">
+            <div class="member-name">Satish Saw</div>
+        </div>
+
+        <div class="member">
+            <img src="sushil.jpeg" alt="Member 2">
+            <div class="member-name">Sushil Saw</div>
+        </div>
+
+        <div class="member">
+            <img src="ashish.jpeg" alt="Member 3">
+            <div class="member-name">Ashish Saw</div>
+        </div>
+
+        <div class="member">
+            <img src="prabhat.jpeg" alt="Member 4">
+            <div class="member-name">Prabhat Saw</div>
+        </div>
+
+        <div class="member">
+            <img src="satish_yadav.jpeg" alt="Member 5">
+            <div class="member-name">Satish Yadav</div>
+        </div>
+
+        <div class="member">
+            <img src="anukul_yadav.jpeg" alt="Member 6">
+            <div class="member-name">Anukul Yadav</div>
+        </div>
+
+        <div class="member">
+            <img src="sikendar_basanti.jpeg" alt="Member 7">
+            <div class="member-name">Sikendar Singh</div>
+        </div>
+
+        <div class="member">
+            <img src="sameer_ram.jpeg" alt="Member 8">
+            <div class="member-name">Sameer Ram</div>
+        </div>
+
+        <div class="member">
+            <img src="ankit_yadav.png" alt="Member 9">
+            <div class="member-name">Ankit Yadav</div>
+        </div>
+
+        <div class="member">
+            <img src="chandan_saw.jpeg" alt="Member 10">
+            <div class="member-name">chandan Saw</div>
+        </div>
+
+        <div class="member">
+            <img src="banty_babu.jpeg" alt="Member 11">
+            <div class="member-name">Banty Kumar</div>
+        </div>
+
+        <div class="member">
+            <img src="sonu_yadav.jpeg" alt="Member 12">
+            <div class="member-name">Sonu Yadav</div>
+        </div>
+
+        <div class="member">
+            <img src="sagar_saw.jpeg" alt="Member 13">
+            <div class="member-name">Sagar saw</div>
+        </div>
+
+        <div class="member">
+            <img src="anshu -gupta.jpeg" alt="Member 14">
+            <div class="member-name">Anshu Gupta</div>
+        </div>
+
+        <div class="member">
+            <img src="rahul_gupta.jpeg" alt="Member 15">
+            <div class="member-name">Rahul Gupta</div>
+        </div>
+
+        <div class="member">
+            <img src="karan_yadav.jpeg" alt="Member 16">
+            <div class="member-name">karan_yadav</div>
+        </div>
+
+        <!-- 4 EXTRA SLOTS -->
+
+        <div class="member">
+            <img src="bhola -paswan.jpeg" alt="Member 17">
+            <div class="member-name">Anuj Paswan</div>
+        </div>
+
+        <div class="member">
+            <img src="nitesh_kant.jpeg" alt="Member 18">
+            <div class="member-name">Nitesh Kant</div>
+        </div>
+
+        <div class="member">
+            <img src="satish_saw.png" alt="Member 19">
+            <div class="member-name">नाम 19</div>
+        </div>
+
+        <div class="member">
+            <img src="satish_saw.png" alt="Member 20">
+            <div class="member-name">नाम 20</div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
